@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  {{ title }}
+  <span class="spacer"></span>
+  <button mat-icon-button (click)="showVideo = !showVideo">
+    <mat-icon>movie</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-song-list (select)="onSongSelect($event)"></app-song-list>
+  </mat-sidenav>
+  <app-song-details *ngIf="!showVideo"></app-song-details>
+  <app-video *ngIf="showVideo"></app-video>
+</mat-sidenav-container>
+
+<app-player></app-player>

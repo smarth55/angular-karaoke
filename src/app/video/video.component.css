@@ -1,0 +1,7 @@
+video {
+  transform: scaleX(-1);
+}
+
+canvas {
+  width: 100%;
+}

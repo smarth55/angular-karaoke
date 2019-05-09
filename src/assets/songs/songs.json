@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "And She Was",
+    "artist": "Talking Heads",
+    "album": "Little Creatures",
+    "avatarPath": "assets/images/avatars/talking_heads.png",
+    "audioPath": "assets/audio/and_she_was.mp3",
+    "artPath": "assets/images/album_art/little_creatures.png",
+    "lyricPath": "assets/lyrics/and_she_was.lrc"
+  },
+  {
+    "id": 2,
+    "title": "Heart and Soul",
+    "artist": "Huey Lewis and the News",
+    "album": "Sports",
+    "avatarPath": "assets/images/avatars/huey_lewis.png",
+    "audioPath": "assets/audio/heart_and_soul.mp3",
+    "artPath": "assets/images/album_art/sports.png",
+    "lyricPath": "assets/lyrics/heart_and_soul.lrc"
+  },
+  {
+    "id": 3,
+    "title": "Pure Energy",
+    "artist": "Information Society",
+    "album": "Information Society",
+    "avatarPath": "assets/images/avatars/information_society.png",
+    "audioPath": "assets/audio/pure_energy.mp3",
+    "artPath": "assets/images/album_art/information_society.png",
+    "lyricPath": "assets/lyrics/pure_energy.lrc"
+  },
+  {
+    "id": 4,
+    "title": "Ringfinger",
+    "artist": "Nine Inch Nails",
+    "album": "Pretty Hate Machine",
+    "avatarPath": "assets/images/avatars/nine_inch_nails.png",
+    "audioPath": "assets/audio/ringfinger.mp3",
+    "artPath": "assets/images/album_art/pretty_hate_machine.png",
+    "lyricPath": "assets/lyrics/ringfinger.lrc"
+  },
+  {
+    "id": 5,
+    "title": "She Bop",
+    "artist": "Cyndi Lauper",
+    "album": "She's So Unusual",
+    "avatarPath": "assets/images/avatars/cyndi_lauper.png",
+    "audioPath": "assets/audio/she_bop.mp3",
+    "artPath": "assets/images/album_art/shes_so_unusual.png",
+    "lyricPath": "assets/lyrics/she_bop.lrc"
+  },
+  {
+    "id": 6,
+    "title": "Sledgehammer",
+    "artist": "Peter Gabriel",
+    "album": "So",
+    "avatarPath": "assets/images/avatars/peter_gabriel.png",
+    "audioPath": "assets/audio/sledgehammer.mp3",
+    "artPath": "assets/images/album_art/so.png",
+    "lyricPath": "assets/lyrics/sledgehammer.lrc"
+  },
+  {
+    "id": 7,
+    "title": "That's Good",
+    "artist": "Devo",
+    "album": "Oh No! It's Devo",
+    "avatarPath": "assets/images/avatars/devo.png",
+    "audioPath": "assets/audio/thats_good.mp3",
+    "artPath": "assets/images/album_art/oh_no_its_devo.png",
+    "lyricPath": "assets/lyrics/thats_good.lrc"
+  },
+  {
+    "id": 8,
+    "title": "The Metro",
+    "artist": "Berlin",
+    "album": "Pleasure Victim",
+    "avatarPath": "assets/images/avatars/berlin.png",
+    "audioPath": "assets/audio/the_metro.mp3",
+    "artPath": "assets/images/album_art/pleasure_victim.png",
+    "lyricPath": "assets/lyrics/the_metro.lrc"
+  }
+]

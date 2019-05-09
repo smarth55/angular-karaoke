@@ -1,0 +1,8 @@
+:host() {
+  display: block;
+  min-width: 240px;
+}
+
+mat-list-item {
+  cursor: pointer;
+}

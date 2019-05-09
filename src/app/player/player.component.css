@@ -1,0 +1,27 @@
+:host() {
+  display: block;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.player-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.lyric-container {
+  text-align: center;
+}
+
+.lyric-container .previous,
+.lyric-container .next {
+  color: #d89a9a;
+  height: 1.3em;
+  font-size: 1.3em;
+}
+
+.lyric-container .current {
+  height: 1.3em;
+  font-size: 2em;
+}

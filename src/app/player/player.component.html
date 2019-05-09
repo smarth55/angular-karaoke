@@ -1,0 +1,14 @@
+<mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+
+<div class="lyric-container">
+  <p class="previous">{{ previousLine?.text }}</p>
+  <p class="current">{{ currentLine?.text }}</p>
+  <p class="next">{{ nextLine?.text }}</p>
+</div>
+
+<div class="player-controls">
+  <button mat-fab color="accent" (click)="toggle()">
+    <mat-icon *ngIf="!isPlaying">play_arrow</mat-icon>
+    <mat-icon *ngIf="isPlaying">pause</mat-icon>
+  </button>
+</div>
