@@ -16,7 +16,7 @@ export interface SongSelectEvent {
 export class SongListComponent implements OnInit {
   @Output() select: EventEmitter<SongSelectEvent> = new EventEmitter<SongSelectEvent>();
 
-  private songs: Observable<Song[]>;
+  songs: Observable<Song[]>;
 
   constructor(private songService: SongService) { }
 
