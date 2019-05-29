@@ -12,9 +12,9 @@ import { Song } from './services/song.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('sidenav') sidenav: MatSidenav;
-  @ViewChild(SongDetailsComponent) songDetails: SongDetailsComponent;
-  @ViewChild(PlayerComponent) player: PlayerComponent;
+  @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
+  @ViewChild(SongDetailsComponent, { static: false }) songDetails: SongDetailsComponent;
+  @ViewChild(PlayerComponent, { static: true }) player: PlayerComponent;
 
   title = 'Karaoke Jams';
   showVideo: boolean = false;

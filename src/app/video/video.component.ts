@@ -14,8 +14,8 @@ const backgroundImages = [
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit, OnDestroy {
-  @ViewChild('video') video: ElementRef<HTMLVideoElement>;
-  @ViewChild('canvas') canvas: ElementRef<HTMLCanvasElement>;
+  @ViewChild('video', { static: true }) video: ElementRef<HTMLVideoElement>;
+  @ViewChild('canvas', { static: true }) canvas: ElementRef<HTMLCanvasElement>;
 
   private background: HTMLImageElement;
   private currentBackground: String;
@@ -25,6 +25,9 @@ export class VideoComponent implements OnInit, OnDestroy {
   constructor(private bodyPix: BodyPixService) {}
 
   async ngOnInit() {
+
+    // need to load all images first, then set one as the background
+
     this.background = new Image();
     this.getNewBackground();
     this.backgroundSubscription = interval(5000).subscribe(this.getNewBackground.bind(this));
