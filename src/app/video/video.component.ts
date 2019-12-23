@@ -17,18 +17,21 @@ export class VideoComponent implements OnInit, OnDestroy {
   @ViewChild('video', { static: true }) video: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas', { static: true }) canvas: ElementRef<HTMLCanvasElement>;
 
+  private backgroundImages: Array<HTMLImageElement> = [];
   private background: HTMLImageElement;
-  private currentBackground: String;
+  private currentBackgroundIndex: Number;
   private backgroundSubscription: Subscription;
   private dead: boolean = false;
 
   constructor(private bodyPix: BodyPixService) {}
 
   async ngOnInit() {
+    backgroundImages.forEach(src => {
+      let image = new Image();
+      image.src = `/assets/images/${src}`;
+      this.backgroundImages.push(image);
+    })
 
-    // need to load all images first, then set one as the background
-
-    this.background = new Image();
     this.getNewBackground();
     this.backgroundSubscription = interval(5000).subscribe(this.getNewBackground.bind(this));
 
@@ -49,16 +52,17 @@ export class VideoComponent implements OnInit, OnDestroy {
 
   getNewBackground() {
     let index = Math.floor(Math.random() * backgroundImages.length);
-    let newBackground = backgroundImages[index];
-    if (newBackground === this.currentBackground) {
+    if (index === this.currentBackgroundIndex) {
       this.getNewBackground();
     } else {
-      this.currentBackground = newBackground;
-      this.background.src = `/assets/images/${this.currentBackground}`;
+      this.currentBackgroundIndex = index;
+      this.background = this.backgroundImages[index];
     }
   }
 
   async renderVideo() {
+    if (this.dead) return;
+
     this.bodyPix.drawGreenScreen(
       this.canvas.nativeElement,
       this.video.nativeElement,
