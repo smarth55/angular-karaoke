@@ -1,7 +1,14 @@
 :host() {
   display: block;
+  position: relative;
   padding: 15px;
   box-sizing: border-box;
+}
+
+#hide-lyrics {
+  position: absolute;
+  right: 15px;
+  top: 25px;
 }
 
 .player-controls {

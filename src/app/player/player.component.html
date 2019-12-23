@@ -1,6 +1,10 @@
 <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
 
-<div class="lyric-container">
+<button id="hide-lyrics" mat-mini-fab color="accent" (click)="toggleLyrics()">
+  <mat-icon>menu_open</mat-icon>
+</button>
+
+<div class="lyric-container" [hidden]="hideLyrics">
   <p class="previous">{{ previousLine?.text }}</p>
   <p class="current">{{ currentLine?.text }}</p>
   <p class="next">{{ nextLine?.text }}</p>

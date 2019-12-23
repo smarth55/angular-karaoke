@@ -11,6 +11,7 @@ import { LyricsService, Line } from '../services/lyrics.service';
 })
 export class PlayerComponent implements OnInit, OnDestroy {
   public isPlaying: boolean = false;
+  public hideLyrics: boolean = false;
   public progress: number = 0;
   public currentLine: Line;
   public previousLine: Line;
@@ -43,7 +44,6 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   loadSong(song: Song) {
-    console.log('load song', song);
     this.lyrics.getLyrics(song.lyricPath).subscribe((res: any) => {
       this.lines = res;
     });
@@ -89,5 +89,9 @@ export class PlayerComponent implements OnInit, OnDestroy {
   private play() {
     this.audio.play();
     this.isPlaying = true;
+  }
+
+  toggleLyrics() {
+    this.hideLyrics = !this.hideLyrics;
   }
 }
