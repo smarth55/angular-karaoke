@@ -25,9 +25,12 @@ export class AppComponent {
     this.sidenav.toggle();
 
     if (this.selectedSong && this.selectedSong.id === $event.song.id) return;
-
     this.selectedSong = $event.song;
-    this.songDetails.loadSong(this.selectedSong);
+
+    if (this.songDetails) {
+      this.songDetails.loadSong(this.selectedSong);
+    }
+
     this.player.loadSong(this.selectedSong);
   }
 }
