@@ -20,7 +20,7 @@ export class BodyPixService {
 
   async drawGreenScreen(canvas: HTMLCanvasElement, image: ImageType, background: ImageType) {
     if (!this.net) return;
-    let personSegmentation = await this.net.estimatePersonSegmentation(image);
+    let personSegmentation = await this.net.segmentPerson(image);
     drawGreenScreenEffect(canvas, image, background, personSegmentation);
   }
 }

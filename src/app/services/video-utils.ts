@@ -1,5 +1,5 @@
 import { cpuBlur } from '@tensorflow-models/body-pix/dist/blur';
-import { PartSegmentation, PersonSegmentation } from '@tensorflow-models/body-pix/dist/types';
+import { PartSegmentation, PersonSegmentation, SemanticPersonSegmentation } from '@tensorflow-models/body-pix/dist/types';
 
 const offScreenCanvases: {[name: string]: HTMLCanvasElement} = {};
 
@@ -116,7 +116,7 @@ function renderImageDataToOffScreenCanvas(image: ImageData, canvasName: string):
  * personSegmentation, with opacity and transparency at each pixel determined by
  * the corresponding binary segmentation value at the pixel from the output.
  */
-export function toMaskImageData(segmentation: PersonSegmentation, maskBackground = true): ImageData {
+export function toMaskImageData(segmentation: PersonSegmentation | SemanticPersonSegmentation, maskBackground = true): ImageData {
   const {width, height, data} = segmentation;
   const bytes = new Uint8ClampedArray(width * height * 4);
 
@@ -298,7 +298,7 @@ export function drawPixelatedMask(canvas: HTMLCanvasElement, image: ImageType, m
   ctx.restore();
 }
 
-function createPersonMask(segmentation: PersonSegmentation, edgeBlurAmount: number): HTMLCanvasElement {
+function createPersonMask(segmentation: PersonSegmentation | SemanticPersonSegmentation, edgeBlurAmount: number): HTMLCanvasElement {
   const maskBackground = false;
   const backgroundMaskImage = toMaskImageData(segmentation, maskBackground);
 
@@ -360,7 +360,7 @@ export function drawBokehEffect(canvas: HTMLCanvasElement, image: ImageType, per
 }
 
 
-export function drawGreenScreenEffect(canvas: HTMLCanvasElement, image: ImageType, background: ImageType, personSegmentation: PersonSegmentation, edgeBlurAmount = 3) {
+export function drawGreenScreenEffect(canvas: HTMLCanvasElement, image: ImageType, background: ImageType, personSegmentation: PersonSegmentation | SemanticPersonSegmentation, edgeBlurAmount = 3) {
   const personMask = createPersonMask(personSegmentation, edgeBlurAmount);
   const ctx = canvas.getContext('2d');
   ctx.save();
