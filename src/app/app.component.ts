@@ -13,7 +13,7 @@ import { Song } from './services/song.service';
 })
 export class AppComponent {
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
-  @ViewChild(SongDetailsComponent, { static: false }) songDetails: SongDetailsComponent;
+  @ViewChild(SongDetailsComponent) songDetails: SongDetailsComponent;
   @ViewChild(PlayerComponent, { static: true }) player: PlayerComponent;
 
   title = 'Karaoke Jams';
