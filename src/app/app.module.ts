@@ -10,6 +10,8 @@ import { SongListComponent } from './song-list/song-list.component';
 import { PlayerComponent } from './player/player.component';
 import { SongDetailsComponent } from './song-details/song-details.component';
 import { VideoComponent } from './video/video.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { VideoComponent } from './video/video.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
